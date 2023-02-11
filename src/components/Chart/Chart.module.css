@@ -1,0 +1,173 @@
+.Chart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: fit-content;
+  border: 1px solid gray;
+  padding: 25px;
+  border-radius: 4px;
+  margin-left: 50px;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 18px;
+  text-align: left;
+  margin-block: 10px;
+  font-style: italic;
+}
+
+.chartData {
+  display: flex;
+  gap: 50px;
+  padding-left: 20px;
+  position: relative;
+  transform: translateY(15px);
+}
+
+.chartData:has(.doubleRow) {
+  flex-direction: column;
+}
+
+.doubleRow {
+  display: flex;
+  gap: 27px;
+}
+.doubleRow [data-number] {
+  width: 30px !important;
+}
+
+.doubleRow [data-number]:nth-child(2) {
+  left: 30px !important;
+}
+
+.chartData:is([data-chart-type="single"])
+  [data-testid="ChartLine-wrapper"]
+  > :first-child,
+.doubleRow [data-label] {
+  width: 60px !important;
+}
+
+.Chart section > div {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.Chart section {
+  display: flex;
+  gap: 20px;
+  padding: 5px;
+  background: #ecf8f8;
+  justify-content: center;
+  margin-top: 15px;
+  margin-left: 60px;
+}
+
+.client {
+  background: #1e6091;
+  color: #1e6091;
+  height: 10px;
+  width: 10px;
+  border-radius: 2px;
+}
+
+.patient {
+  background: #76c893;
+  color: #76c893;
+  height: 10px;
+  width: 10px;
+  border-radius: 2px;
+}
+
+.gridWrapper {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: flex-start;
+}
+
+.gridLines {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.marker {
+  height: 30px;
+  box-sizing: border-box;
+  display: flex;
+  border-right: 2px solid black;
+  text-align: end;
+  padding-right: 5px;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.gridLines > :first-child:after {
+  content: "";
+  height: 13px;
+  right: -2px;
+  bottom: 0px;
+  width: 2px;
+  position: absolute;
+  background: white;
+}
+
+.label {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  grid-row: 1/-1;
+  transform: rotate(180deg);
+  margin-top: 120px;
+  padding-left: 10px;
+}
+.chartGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.lineGroup {
+  display: flex;
+  gap: 15px;
+}
+
+.bottom {
+  position: absolute;
+  height: 2px;
+  background: black;
+  left: 0px;
+  right: 0px;
+  top: 300px;
+}
+
+.groupLabel {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid gray;
+  padding-top: 8px;
+  position: relative;
+  font-weight: 700;
+}
+
+.groupLabel:before {
+  content: "";
+  height: 10px;
+  left: 0px;
+  top: -10px;
+  width: 1px;
+  position: absolute;
+  background: gray;
+}
+
+.groupLabel:after {
+  content: "";
+  height: 10px;
+  right: 0px;
+  top: -10px;
+  width: 1px;
+  position: absolute;
+  background: gray;
+}
